@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/about' => 'homes#about'
   resources :books
   resources :users
+  resources :post_images, only: [:new, :create, :index, :show, :destroy]
 end
