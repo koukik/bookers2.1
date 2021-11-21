@@ -1,4 +1,14 @@
 <h2>User info</h2>
 
+<p>title</p>
+<span><%= book.totle %></span>
+
+
+<p>一覧</p>
+<% @book.each do |book| %>
+  <p>title</p>
+  <span><%= book.totle %></span>
+<% end %>
 <!-- form_with 部分-->
 <%= form_with model: @book, url:'/books', local:true do |f| %>
+
