@@ -16,7 +16,7 @@ class BooksController < ApplicationController
      # ２. データをデータベースに保存するためのsaveメソッド実行
      book.save
      # ３. トップ画面へリダイレクト
-     redirect_to '/book'
+     redirect_to '/books'
   end
 
   psivate
