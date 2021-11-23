@@ -1,9 +1,11 @@
-<p>name</p>
-<h1>編集画面</h1>
+
+<h1>User info</h1>
 <%= form_with model:@user, url:"/user/#{@user.id}", local:true do |f| %>
-  <h4>タイトル</h4>
+  <h4>name</h4>
   <%= f.text_field :title %>
-  <h4>本文</h4>
+  <h4>Image</h4>
+  <%= %>
+  <h4>introducion</h4>
   <%= f.text_area :body %>
-  <%= f.submit '保存' %>
+  <%= f.submit 'Update User' %>
 <% end %>

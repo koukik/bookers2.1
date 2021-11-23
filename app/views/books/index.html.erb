@@ -4,6 +4,11 @@
 
 <h1>Books</h1>
 <% @books.each do |book| %>
-  <p>タイトル</p>
+  
+  <p>Title</p>
+  <!--リンク先がedit-->
   <span><%= book.title %></span>
+  <p>opinion</p>
+  <span><%= book.body %></span>
+
 <% end %>
