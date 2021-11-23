@@ -1,14 +1,9 @@
-<h2>User info</h2>
 
-<p>title</p>
-<span><%= book.totle %></span>
+<%= render 'users/info', user: @user %>
+<%= render 'books/info', book: @book %>
 
-
-<p>一覧</p>
-<% @book.each do |book| %>
-  <p>title</p>
-  <span><%= book.totle %></span>
+<h1>Books</h1>
+<% @books.each do |book| %>
+  <p>タイトル</p>
+  <span><%= book.title %></span>
 <% end %>
-<!-- form_with 部分-->
-<%= form_with model: @book, url:'/books', local:true do |f| %>
-

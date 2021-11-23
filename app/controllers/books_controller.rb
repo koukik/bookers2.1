@@ -1,13 +1,8 @@
 class BooksController < ApplicationController
   def index
-    @book = Book.all
+    @books = Book.all
     @book = Book.new
-  end
-
-  def show
-  end
-
-  def edit
+    @user = current_user
   end
 
   def create
@@ -19,7 +14,15 @@ class BooksController < ApplicationController
      redirect_to '/books'
   end
 
-  psivate
+  def show
+    @book = Book.find(params[:id])
+  end
+
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+  private
   # ストロングパラメータ
   def book_params
     params.require(:book).permit(:title, :body)
