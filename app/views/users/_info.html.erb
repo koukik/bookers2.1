@@ -1,5 +1,12 @@
 <h1>User info</h1>
+<!--↓合ってるか微妙-->
 
-        <p>name</p>
-        <span><%= user.name %></span>
-        
+<!--ユーザーの画像を表示させる-->
+<%= attachment_image_tag @user, :profile_image_id, :fill, 60, 60, fallback: "no_image.jpg"%>
+<!--上の２個のどっちかやと思う-->
+<p><%= @user.name %></p>
+<!--↓userのeditで書いたやつを表示させる-->
+<p>introduction</p>
+<!--↑表示させ方がわからん-->
+</div>
+

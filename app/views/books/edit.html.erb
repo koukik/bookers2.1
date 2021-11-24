@@ -1,3 +1,13 @@
-<p>Book detail</p>
-<!--userの詳細ページ？-->
-<!--bookのedit(多分リダイレクト)-->
+<h1>Editing Book</h1>
+  <h4>title</h4>
+  <li>
+  <%= link_to 'Image', books_path %>
+  </li>
+  <%= f.text_field :title %>
+  <h4>Opinion</h4>
+  <%= f.text_area :body %>
+  <!--updete Book
+   bookのアップデートする機能がいる-->
+  <%= f.submit 'Update book' %>
+<!--bookのshowにいく(多分リダイレクト)-->
+<!--showにいくボタンと Backのボタンがいる-->

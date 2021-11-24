@@ -1,2 +1,13 @@
-<p>おおきにです！</p>
-<p>おおきにですと申します！</p>
+<%= render 'users/info', user: @user %>
+<%= render 'books/info', book: @book %>
+
+<h1>Book detail</h1>
+<!--↓アイコン押したらuserのsowにいくようにしたい-->
+
+<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+
+<%= link_to book.title, book_path(book.id) %>
+<!--↑タイトル押せばbookのshowに帰るはず-->
+<!--アイコンを押すとuserのshowにいく
+　　タイトル押すとbookのshowにいく-->
+　<!--editとdestroy機能がいる-->
