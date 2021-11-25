@@ -1,21 +1,25 @@
 
-<div class="container">  <!-- この行を追加 -->
+<div class="container px-5 px-sm-0"> <!-- この行を追加 -->
   <div class="row">
-    <div class="col-lg-4">
-      <%= render 'users/info', user: @user %>
-      <%= render 'books/info', book: @book %>
+    <div class="col-lg-3">
+      <%= render 'books/info', book: @book, user: @user %>
     </div>
-    <div class="col-lg-8">
-      <table class="table table-striped">
+    <div class="col-lg-8 offset-md-1">
+      <h1>Users</h1>
+      <table class="table">
+        <tbody>
         <% @users.each do |user| %>
-          <h1>Users</h1>
-          <p>image</p>
-          <p>name</p>
-          <span><%= user.name %></span>
-          <li>
-          <%= link_to 'sow', user_path(current_user.id) %>
-          </li>
-        <% end %>
+              <tr>
+                <th></th>
+                <th>image</th>
+                <th><%= attachment_image_tag @user, :profile_image_id, :fill, 10, 10, fallback: "no_image.jpg"%></th>
+                <th>name</th>
+                <th><%= user.name %></th>
+                <th><%= link_to 'sow', user_path(current_user.id) %></th>
+                <th colspan="3"></th>
+              </tr>
+            <% end %>
+          </tbody>
       </table>
     </div>
   </div>  <!-- この行を追加 -->

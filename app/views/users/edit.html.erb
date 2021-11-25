@@ -1,17 +1,31 @@
+<div class="container">
+ <div class="row">
+  <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+   <h2>User info</h2>
 <h1>User info</h1>
-<!--今ログインしてる人本人の名前を変更する-->
-<%= form_with model:@user, local:true do |f| %>
-  <label for="inputName">Name</label>
-  <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:""%>
-  <%= attachment_image_tag @user, :profile_image_id, :fill, 60, 60, fallback: "no_image.jpg"%>
-  <label for="inputImage">Image</label>
-  <%= f.attachment_field @user,:profile_image_id, placeholder: "プロフィール画像" %>
+<% if @user.errors.any? %>
+  <div id='error_explanation'>
+    <h2><%= @user.errors.count %> errors prohibited this obj from being saved:</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
 <% end %>
+<%= form_with model:@user, local:true do |f| %>
+   <div>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control user_name' %>
+   </div>
+  <label for='inputImage'>ProfileImage</label>
 
-<!--Introduction
-   直訳したら"紹介する"らしい-->
-
-
-<!--Updatw Userのボタン
-　　userのshowページにいく-->
-<!--↓多分記載が違う-->
+   <div>
+    <%= f.label :introduction %>
+    <%= f.text_area :introduction, class: 'form-control user_introduction' %>
+   </div>
+   <div>
+    <%= f.submit 'Update User', class: 'btn btn-secondary' %>
+   </div>
+   <% end %>
+   </div>

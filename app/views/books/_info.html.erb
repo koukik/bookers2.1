@@ -1,13 +1,29 @@
+<h1>User info</h1>
+<%= attachment_image_tag book.user, :profile_image_id, :fill, 60, 60, fallback: "no_image.jpg"%>
+<tfoot>
+  <tr>
+    <td><%= form_with model:user, local:true do |f| %></td>
+    <td>Name</td>
+    <td><%=user.name %></td>
+    <td>Introductio</td>
+    <td><%= user.introduction %></td>
+    </div>
 
-<!--編集のとこをアイコンに変えたい-->
-<% if @user.id == current_user.id %>
-  <p><%= link_to "編集", edit_user_path(@user) %></p>
-<% end %>
+    <td><%= link_to 'edit', edit_user_path(current_user) %></td>
+  </tr>
+</tfoot>
 <h2>New book</h2>
-<%= form_with model:book,url:'/books',local:true do |f| %>
-  <h4>title</h4>
-  <%= f.text_field :title %>
-  <h4>opinion</h4>
-  <%= f.text_area :body %>
-  <%= f.submit'Creat Book' %>
+<teble class="teble">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <th><%= f.text_field :title %></th>
+    </tr>
+    <tr>
+      <th>Opinion</th>
+      <th><%= f.text_area :body %></th>
+    </tr>
+      <th><%= f.submit'Creat Book' %></th>
+  </tbody>
+</teble>
 <% end %>
